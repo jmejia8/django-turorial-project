@@ -1,0 +1,74 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+*.mo
+db.sqlite3
+media/
+staticfiles/
+static_root/
+.env
+
+# If using Django migrations, uncomment if you want to ignore initial db
+# migrations (not recommended for team projects)
+# */migrations/*.py
+# */migrations/*.pyc
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+
+# VS Code / PyCharm / IDEs
+.vscode/
+.idea/
+*.swp
+
+# Testing
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Environments
+*.env
+*.venv
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build / packaging
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Logs
+*.log
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
