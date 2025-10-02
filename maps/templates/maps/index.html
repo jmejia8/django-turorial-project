@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map with Markers and Routes</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'maps/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Interactive Map</h1>
+            <div class="controls">
+                <button id="clearMarkers" class="btn">Clear All Markers</button>
+                <button id="clearRoute" class="btn">Clear Route</button>
+                <button id="drawRoute" class="btn">Draw Route</button>
+                <form action="{% url 'maps:save_route' %}" method="post" >
+                    
+                    {% csrf_token %}
+                    <input type="hidden" name="data" id="data"/>
+                    <input type="submit" class="btn" value="Send route" />
+                </form>
+            </div>
+        </header>
+        
+        <div id="map"></div>
+        
+        <div class="info">
+            <p><strong>Instructions:</strong></p>
+            <ul>
+                <li>Click anywhere on the map to add a marker</li>
+                <li>Click "Draw Route" to connect all markers with a line</li>
+                <li>Use "Clear Route" to remove the route line</li>
+                <li>Use "Clear All Markers" to remove all markers and routes</li>
+            </ul>
+
+            <p>
+
+            {% if message %}
+            <pre>{{message}}</pre>
+            {% endif %}
+
+            </p>
+        </div>
+        
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script src="{% static 'maps/script.js' %}"></script>
+</body>
+</html>
