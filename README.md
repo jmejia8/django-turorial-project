@@ -1,4 +1,4 @@
-# Plataforma Ciclista Backend
+# Testing django 
 
 A Django web application for testing some functionalities.
 
